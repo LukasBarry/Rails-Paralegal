@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  construct_complete: MyString
+  construct_lien_appointed: MyString
+  construct_lien_name: MyString
+
+two:
+  construct_complete: MyString
+  construct_lien_appointed: MyString
+  construct_lien_name: MyString

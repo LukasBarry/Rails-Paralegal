@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505172352) do
+ActiveRecord::Schema.define(version: 20160505210749) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "current_owner"
@@ -29,6 +29,47 @@ ActiveRecord::Schema.define(version: 20160505172352) do
     t.string   "alta_endorsement"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "constructions", force: :cascade do |t|
+    t.string   "construct_complete"
+    t.string   "construct_lien_appointed"
+    t.string   "construct_lien_name"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "manufactured_homes", force: :cascade do |t|
+    t.string   "m_home_exists"
+    t.string   "m_home_real_estate"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "m_home_affidavit_file_name"
+    t.string   "m_home_affidavit_content_type"
+    t.integer  "m_home_affidavit_file_size"
+    t.datetime "m_home_affidavit_updated_at"
+  end
+
+  create_table "occupancies", force: :cascade do |t|
+    t.string   "occupants"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prior_policies", force: :cascade do |t|
+    t.string   "pp_exists"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "pp_copy_file_name"
+    t.string   "pp_copy_content_type"
+    t.integer  "pp_copy_file_size"
+    t.datetime "pp_copy_updated_at"
+  end
+
+  create_table "property_uses", force: :cascade do |t|
+    t.string   "property_use_type"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|

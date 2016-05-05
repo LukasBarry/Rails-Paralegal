@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  m_home_exists: MyString
+  m_home_real_estate: MyString
+
+two:
+  m_home_exists: MyString
+  m_home_real_estate: MyString
