@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20160505210749) do
 
   create_table "buyers", force: :cascade do |t|
@@ -52,10 +53,28 @@ ActiveRecord::Schema.define(version: 20160505210749) do
 
   create_table "occupancies", force: :cascade do |t|
     t.string   "occupants"
+=======
+ActiveRecord::Schema.define(version: 20160506163802) do
+
+  create_table "easements", force: :cascade do |t|
+    t.string   "exists"
+    t.text     "effects"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "recorded_easement_file_name"
+    t.string   "recorded_easement_content_type"
+    t.integer  "recorded_easement_file_size"
+    t.datetime "recorded_easement_updated_at"
+  end
+
+  create_table "liens", force: :cascade do |t|
+    t.text     "liens"
+>>>>>>> d55ff2225f3f67f112e200c542c57994a7bb2bac
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "prior_policies", force: :cascade do |t|
     t.string   "pp_exists"
     t.datetime "created_at",           null: false
@@ -95,4 +114,23 @@ ActiveRecord::Schema.define(version: 20160505210749) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
+=======
+  create_table "mortgages", force: :cascade do |t|
+    t.string   "owner"
+    t.date     "dated"
+    t.integer  "book"
+    t.integer  "page"
+    t.integer  "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "taxes", force: :cascade do |t|
+    t.integer  "paid_through"
+    t.integer  "amount"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+>>>>>>> d55ff2225f3f67f112e200c542c57994a7bb2bac
 end

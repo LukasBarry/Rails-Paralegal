@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner: MyString
+  dated: 2016-05-05
+  book: 1
+  page: 1
+  amount: 1
+
+two:
+  owner: MyString
+  dated: 2016-05-05
+  book: 1
+  page: 1
+  amount: 1
