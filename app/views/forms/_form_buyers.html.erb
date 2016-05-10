@@ -1,4 +1,4 @@
-<%= form_for @buyer do |f| %>
+<%= form_for @buyer, url: forms_path(@buyer), method: :put do |f| %>
 <div class="form-group">
   <%= f.label :current_owner  %>
   <%= f.text_field :current_owner %>
@@ -13,7 +13,7 @@
 </div><br />
 <div class="form-group">
   <%= f.label :county %>
-  <%= t.text_field :county %>
+  <%= f.text_field :county %>
 </div><br />
 <div class="form-group">
   <%= f.label :purchase_price %>
