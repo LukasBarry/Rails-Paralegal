@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160505210749) do
+ActiveRecord::Schema.define(version: 20160506163802) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "current_owner"
@@ -40,22 +39,6 @@ ActiveRecord::Schema.define(version: 20160505210749) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "manufactured_homes", force: :cascade do |t|
-    t.string   "m_home_exists"
-    t.string   "m_home_real_estate"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.string   "m_home_affidavit_file_name"
-    t.string   "m_home_affidavit_content_type"
-    t.integer  "m_home_affidavit_file_size"
-    t.datetime "m_home_affidavit_updated_at"
-  end
-
-  create_table "occupancies", force: :cascade do |t|
-    t.string   "occupants"
-
-ActiveRecord::Schema.define(version: 20160506163802) do
-
   create_table "easements", force: :cascade do |t|
     t.string   "exists"
     t.text     "effects"
@@ -69,6 +52,33 @@ ActiveRecord::Schema.define(version: 20160506163802) do
 
   create_table "liens", force: :cascade do |t|
     t.text     "liens"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "manufactured_homes", force: :cascade do |t|
+    t.string   "m_home_exists"
+    t.string   "m_home_real_estate"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "m_home_affidavit_file_name"
+    t.string   "m_home_affidavit_content_type"
+    t.integer  "m_home_affidavit_file_size"
+    t.datetime "m_home_affidavit_updated_at"
+  end
+
+  create_table "mortgages", force: :cascade do |t|
+    t.string   "owner"
+    t.date     "dated"
+    t.integer  "book"
+    t.integer  "page"
+    t.integer  "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "occupancies", force: :cascade do |t|
+    t.string   "occupants"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,6 +97,13 @@ ActiveRecord::Schema.define(version: 20160506163802) do
     t.string   "property_use_type"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "taxes", force: :cascade do |t|
+    t.integer  "paid_through"
+    t.integer  "amount"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -111,22 +128,5 @@ ActiveRecord::Schema.define(version: 20160506163802) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "mortgages", force: :cascade do |t|
-    t.string   "owner"
-    t.date     "dated"
-    t.integer  "book"
-    t.integer  "page"
-    t.integer  "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "taxes", force: :cascade do |t|
-    t.integer  "paid_through"
-    t.integer  "amount"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
 
 end
