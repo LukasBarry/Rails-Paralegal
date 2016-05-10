@@ -1,3 +1,4 @@
+<%= form_for @buyer do |f| %>
 <div class="form-group">
   <%= f.label :pp_exists %>
   <%= f.select :pp_exists, ["Yes", "No"] %>
@@ -6,3 +7,4 @@
     <%= f.label "Prior Policy" %><br />
     <%= f.file_field :pp_copy %>
 </div><br />
+<% end %>
