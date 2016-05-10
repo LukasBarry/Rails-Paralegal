@@ -1,10 +1,7 @@
 class FormsController < ApplicationController
   def show_buyers
-    @buyer = Buyer.find(params[:id])
-  end
-
-  def new_buyers
     @buyer = Buyer.new
+    # @buyer = Buyer.find(params[:id])
   end
 
   def create
