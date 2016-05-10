@@ -7,9 +7,7 @@ class FormsController < ApplicationController
   def create
     @buyer = Buyer.create(buyer_params)
       if @buyer.save
-        redirect_to @buyer
-      else
-        render 'new'
+        redirect_to root_path
       end
   end
 
