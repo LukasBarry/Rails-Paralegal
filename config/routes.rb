@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'show' => 'forms#show_buyers'
   get 'new' => 'forms#new'
-  put 'forms' => 'forms#create'
+  put 'forms' => 'forms#create_buyers'
   root "forms#show_buyers"
 
 end
