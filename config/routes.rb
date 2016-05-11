@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :property_uses
   resources :taxes
 
+  root "buyers#show"
+
 end

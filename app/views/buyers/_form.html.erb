@@ -1,4 +1,7 @@
-<%= form_for @buyer, url: forms_path(@buyer), method: :put do |f| %>
+
+<!-- form_for @buyer, url: forms_path(@buyer), method: :put do -->
+
+<%= form_for @buyer do |f| %>
 <div class="form-group">
   <%= f.label :current_owner  %>
   <%= f.text_field :current_owner %>
