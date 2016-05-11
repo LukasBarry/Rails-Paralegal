@@ -1,11 +1,11 @@
 class Buyer < ActiveRecord::Base
-  has_one :construction
-  has_one :easement
-  has_one :lien
-  has_one :manufactured_home
-  has_one :mortgage
-  has_one :occupancy
-  has_one :prior_policy
-  has_one :property_use
-  has_one :tax
+  has_many :construction
+  has_many :easement
+  has_many :lien
+  has_many :manufactured_home
+  has_many :mortgage
+  has_many :occupancy
+  has_many :prior_policy
+  has_many :property_use
+  has_many :tax
 end
