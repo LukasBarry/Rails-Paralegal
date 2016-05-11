@@ -4,10 +4,14 @@ class PropertyUsesController < ApplicationController
   end
 
   def create
-    @property = property.create(property_use_params)
+    @property = Property.create(property_use_params)
       if @property.save
-        redirect_to root_path
+        redirect_to property_uses_path
       end
+  end
+
+  def index
+    @property = Property.find(params[:id])
   end
 
   private

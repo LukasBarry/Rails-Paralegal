@@ -4,10 +4,14 @@ class ConstructionsController < ApplicationController
   end
 
   def create
-    @construction = construction.create(construction_params)
+    @construction = Construction.create(construction_params)
       if @construction.save
-        redirect_to root_path
+        redirect_to constructions_path
       end
+  end
+
+  def index
+    @construction = Construction.find(params[:id])
   end
 
   private

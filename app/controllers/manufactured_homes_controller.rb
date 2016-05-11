@@ -1,13 +1,17 @@
 class ManufacturedHomesController < ApplicationController
   def show
-    @manufactured = Manufactured.new
+    @manufactured = Manufactured_home.new
   end
 
   def create
-    @manufactured = manufactured.create(manufactured_home_params)
+    @manufactured = Manufactured_home.create(manufactured_home_params)
       if @manufactured.save
-        redirect_to root_path
+        redirect_to manufactured_homes_path
       end
+  end
+
+  def index
+    @manufactured = Manufactured.find(params[:id])
   end
 
   private

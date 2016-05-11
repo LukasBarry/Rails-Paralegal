@@ -4,10 +4,14 @@ class PriorPoliciesController < ApplicationController
   end
 
   def create
-    @prior = prior.create(prior_policy_params)
+    @prior = Prior.create(prior_policy_params)
       if @prior.save
-        redirect_to root_path
+        redirect_to prior_policies_path
       end
+  end
+
+  def index
+    @prior = Prior.find(params[:id])
   end
 
   private

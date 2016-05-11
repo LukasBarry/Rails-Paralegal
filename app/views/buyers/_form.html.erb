@@ -1,6 +1,3 @@
-
-<!-- form_for @buyer, url: forms_path(@buyer), method: :put do -->
-
 <%= form_for @buyer do |f| %>
 <div class="form-group">
   <%= f.label :current_owner  %>
@@ -12,7 +9,7 @@
 </div><br />
 <div class="form-group">
   <%= f.label :property_address %>
-  <%= f.text_field :property_address, placeholder: "Street Number and Name" %>
+  <%= f.text_field :property_address, placeholder: "ex. 123 Main St" %>
 </div><br />
 <div class="form-group">
   <%= f.label :county %>

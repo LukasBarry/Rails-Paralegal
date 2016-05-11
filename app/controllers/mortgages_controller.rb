@@ -4,10 +4,14 @@ class MortgagesController < ApplicationController
   end
 
   def create
-    @mortgage = mortgage.create(mortgage_params)
+    @mortgage = Mortgage.create(mortgage_params)
       if @mortgage.save
-        redirect_to root_path
+        redirect_to mortgages_path
       end
+  end
+
+  def index
+    @mortgage = Mortgage.find(params[:id])
   end
 
   private

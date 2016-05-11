@@ -4,10 +4,14 @@ class OccupanciesController < ApplicationController
   end
 
   def create
-    @occupancy = occupancy.create(occupancy_params)
+    @occupancy = Occupancy.create(occupancy_params)
       if @occupancy.save
-        redirect_to root_path
+        redirect_to occupancies_path
       end
+  end
+
+  def index
+    @occupancy = Occupancy.find(params[:id])
   end
 
   private

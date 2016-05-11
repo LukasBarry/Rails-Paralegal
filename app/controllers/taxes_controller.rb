@@ -4,10 +4,14 @@ class TaxesController < ApplicationController
   end
 
   def create
-    @tax = tax.create(tax_params)
+    @tax = Tax.create(tax_params)
       if @tax.save
-        redirect_to root_path
+        redirect_to taxes_path
       end
+  end
+
+  def index
+    @tax = Tax.find(params[:id])
   end
 
   private
