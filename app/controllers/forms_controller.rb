@@ -1,7 +1,6 @@
 class FormsController < ApplicationController
   def show_buyers
     @buyer = Buyer.new
-    # @buyer = Buyer.find(params[:id])
   end
 
   def create_buyers
@@ -50,7 +49,64 @@ class FormsController < ApplicationController
 
   def create_manufactured
     @manufactured = manufactured.create(manufactured_home_params)
-      
+      if @manufactured.save
+        redirect_to root_path
+      end
+  end
+
+  def show_mortgages
+    @mortgage = Mortgage.new
+  end
+
+  def create_mortgages
+    @mortgage = mortgage.create(mortgage_params)
+      if @mortgage.save
+        redirect_to root_path
+      end
+  end
+
+  def show_occupancies
+    @occupancy = Occupancy.new
+  end
+
+  def create_occupancies
+    @occupancy = occupancy.create(occupancy_params)
+      if @occupancy.save
+        redirect_to root_path
+      end
+  end
+
+  def show_prior
+    @prior = Prior.new
+  end
+
+  def create_prior
+    @prior = prior.create(prior_policy_params)
+      if @prior.save
+        redirect_to root_path
+      end
+  end
+
+  def show_property
+    @property = Property.new
+  end
+
+  def create_property
+    @property = property.create(property_use_params)
+      if @property.save
+        redirect_to root_path
+      end
+  end
+
+  def show_taxes
+    @tax = Tax.new
+  end
+
+  def create_taxes
+    @tax = tax.create(tax_params)
+      if @tax.save
+        redirect_to root_path
+      end
   end
 
   private
