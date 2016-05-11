@@ -1,0 +1,10 @@
+<%= form_for @tax do |f| %>
+<div class="form-group">
+  <%= f.label :paid_through %>
+  <%= f.number_field :paid_through %>
+</div><br />
+<div class="form-group">
+  <%= f.label :amount %>
+  <%= f.number_field :amount %>
+</div><br />
+<% end %>

@@ -1,0 +1,14 @@
+<%= form_for @easement do |f| %>
+<div class="form-group">
+  <%= f.label :exists %>
+  <%= f.select :exists, ["Yes", "No"] %>
+</div><br />
+<div class="form-group">
+  <%= f.label :effects %>
+  <%= f.text_field :effects %>
+</div><br />
+<div class="form-group">
+    <%= f.label "Easements/Right of Ways" %><br />
+    <%= f.file_field :recorded_easement %>
+</div><br />
+<% end %>

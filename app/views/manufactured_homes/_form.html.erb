@@ -1,0 +1,14 @@
+<%= form_for @manufactured do |f| %>
+<div class="form-group">
+  <%= f.label :m_home_exists %>
+  <%= f.select :m_home_exists, ["Yes", "No"] %>
+</div><br />
+<div class="form-group">
+  <%= f.label :m_home_real_estate %>
+  <%= f.select :m_home_real_estate, ["Yes", "No"] %>
+</div><br />
+<div class="form-group">
+    <%= f.label "Housing Affidavit" %><br />
+    <%= f.file_field :m_home_affidavit %>
+</div><br />
+<% end %>
