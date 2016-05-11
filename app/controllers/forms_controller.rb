@@ -4,11 +4,53 @@ class FormsController < ApplicationController
     # @buyer = Buyer.find(params[:id])
   end
 
-  def create
+  def create_buyers
     @buyer = Buyer.create(buyer_params)
       if @buyer.save
         redirect_to root_path
       end
+  end
+
+  def show_constructions
+    @construction = Construction.new
+  end
+
+  def create_constructions
+    @construction = construction.create(construction_params)
+      if @construction.save
+        redirect_to root_path
+      end
+  end
+
+  def show_easements
+    @easement = Easement.new
+  end
+
+  def create_easements
+    @easement = easement.create(easement_params)
+      if @easement.save
+        redirect_to root_path
+      end
+  end
+
+  def show_liens
+    @lien = Lien.new
+  end
+
+  def create_liens
+    @lien = lien.create(lien_params)
+      if @lien.save
+        redirect_to root_path
+      end
+  end
+
+  def show_manufactured
+    @manufactured = Manufactured.new
+  end
+
+  def create_manufactured
+    @manufactured = manufactured.create(manufactured_home_params)
+      
   end
 
   private
