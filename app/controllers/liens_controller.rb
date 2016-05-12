@@ -14,6 +14,21 @@ class LiensController < ApplicationController
     @lien = Lien.find(params[:id])
   end
 
+  def edit
+    @lien = Lien.find(params[:id])
+  end
+
+  def update
+    @lien = Lien.find(params[:id])
+    respond_to do |format|
+      if @lien.update(lien_params)
+        format.html {redirect_to @lien, notice: "Lien info has been updated"}
+      else
+        format.html {render :edit}
+      end
+    end
+  end
+
   private
   def lien_params
     params.require(:lien).permit(:liens)

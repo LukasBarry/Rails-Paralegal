@@ -14,6 +14,21 @@ class PriorPoliciesController < ApplicationController
     @prior = PriorPolicy.find(params[:id])
   end
 
+  def edit
+    @prior = PriorPolicy.find(params[:id])
+  end
+
+  def update
+    @prior = Prior.find(params[:id])
+    respond_to do |format|
+      if @prior.update(prior_params)
+        format.html {redirect_to @prior, notice: "Prior Policy info has been updated"}
+      else
+        format.html {render :edit}
+      end
+    end
+  end
+
   private
   def prior_policy_params
     params.require(:prior_policy).permit(:pp_exists, :pp_copy)
