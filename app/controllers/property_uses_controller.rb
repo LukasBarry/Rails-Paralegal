@@ -1,17 +1,17 @@
 class PropertyUsesController < ApplicationController
   def new
-    @property = Property.new
+    @property = PropertyUse.new
   end
 
   def create
-    @property = Property.create(property_use_params)
+    @property = PropertyUse.create(property_use_params)
       if @property.save
         redirect_to @property
       end
   end
 
   def show
-    @property = Property.find(params[:id])
+    @property = PropertyUse.find(params[:id])
   end
 
   private

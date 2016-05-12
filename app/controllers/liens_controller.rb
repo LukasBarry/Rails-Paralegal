@@ -6,7 +6,7 @@ class LiensController < ApplicationController
   def create
     @lien = Lien.create(lien_params)
       if @lien.save
-        redirect_to @show
+        redirect_to @lien
       end
   end
 

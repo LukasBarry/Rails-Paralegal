@@ -1,7 +1,7 @@
 <%= form_for @property do |f| %>
 <div class="form-group">
-  <%= f.label :property %>
-  <%= f.select :property, ["Residential", "Commercial"] %>
+  <%= f.label :property_use_type %>
+  <%= f.select :property_use_type, ["Residential", "Commercial"] %>
 </div><br />
 <div class="actions">
     <%= f.submit class: "btn btn-primary btn-lg" %>
