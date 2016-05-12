@@ -1,11 +1,11 @@
 <%= form_for @lien do |f| %>
 <div class="form-group">
   <%= f.label :liens %>
-  <%= f.text_field :liens %>
+  <%= f.text_field :liens, class: "form-control" %>
 </div><br />
 <div class="form-group">
   <%= f.label :lien_amount %>
-  <%= f.number_field :lien_amount %>
+  <%= f.number_field :lien_amount, class: "form-control" %>
 </div><br />
 <div class="actions">
     <%= f.submit class: "btn btn-primary btn-lg" %>

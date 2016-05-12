@@ -1,11 +1,11 @@
 <%= form_for @tax do |f| %>
 <div class="form-group">
   <%= f.label :paid_through %>
-  <%= f.number_field :paid_through %>
+  <%= f.number_field :paid_through, class: "form-control" %>
 </div><br />
 <div class="form-group">
   <%= f.label :amount %>
-  <%= f.number_field :amount %>
+  <%= f.number_field :amount, class: "form-control" %>
 </div><br />
 <div class="actions">
     <%= f.submit class: "btn btn-primary btn-lg" %>
