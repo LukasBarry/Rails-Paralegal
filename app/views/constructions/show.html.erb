@@ -1,3 +1,9 @@
 <h1>Construction Information</h1>
 
-<%= render 'form' %>
+<div class="jumbotron">
+  <h4>Is Construction Complete: <%= @construction.construct_complete %></h4><br />
+  <h4>Has A Construction Lien Agent Been Appointed: <%= @construction.construct_lien_appointed %></h4><br />
+  <h4>Construction Lien Agent: <%= @construction.construct_lien_name %></h4><br />
+</div>
+
+<%= link_to "Edit", edit_construction_path, class: "btn btn-primary" %>

@@ -1,13 +1,17 @@
 class LiensController < ApplicationController
-  def show
+  def new
     @lien = Lien.new
   end
 
   def create
-    @lien = lien.create(lien_params)
+    @lien = Lien.create(lien_params)
       if @lien.save
-        redirect_to root_path
+        redirect_to @show
       end
+  end
+
+  def show
+    @lien = Lien.find(params[:id])
   end
 
   private

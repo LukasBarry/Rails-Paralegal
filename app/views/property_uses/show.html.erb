@@ -1,3 +1,7 @@
-<h1>Property Use</h1>
+<h1>Property Uses</h1>
 
-<%= render 'form' %>
+<div class="jumbotron">
+  <h4>Property Use: <%= @property.property %></h4><br />
+</div>
+
+<%= link_to "Edit", edit_property_use_path, class: "btn btn-primary" %>

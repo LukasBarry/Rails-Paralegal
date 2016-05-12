@@ -1,16 +1,19 @@
 class BuyersController < ApplicationController
 
-  def show
+  def new
     @buyer = Buyer.new
   end
 
   def create
     @buyer = Buyer.create(buyer_params)
       if @buyer.save
-        redirect_to root_path
+        redirect_to @buyer
       end
   end
 
+  def show
+    @buyer = Buyer.find(params[:id])
+  end
 
   private
   def buyer_params

@@ -1,3 +1,19 @@
 <h1>Client Information</h1>
 
-<%= render 'form' %>
+<div class="jumbotron">
+  <h4>Current Owner: <%= @buyer.current_owner %></h4><br />
+  <h4>Borrower: <%= @buyer.borrower %></h4><br />
+  <h4>Property Address: <%= @buyer.property_address %></h4><br />
+  <h4>County: <%= @buyer.county %></h4><br />
+  <h4>Purchase Price: <%= @buyer.purchase_price %></h4><br />
+  <h4>Owner's Coverage Amount: <%= @buyer.owners_coverage %></h4><br />
+  <h4>Lender Name: <%= @buyer.lender_name %></h4><br />
+  <h4>Type of Loan: <%= @buyer.type_of_loan %></h4><br />
+  <h4>Loan Number: <%= @buyer.loan_number %></h4><br />
+  <h4>Loan Amount: <%= @buyer.loan_amount %></h4><br />
+  <h4>Type of Policy: <%= @buyer.type_of_policy %></h4><br />
+  <h4>ICL/CPL Requested: <%= @buyer.icl_requested %></h4><br />
+  <h4>ALTA Endorsements Requested: <%= @buyer.alta_endorsement %></h4><br />
+</div>
+
+<%= link_to "Edit", edit_buyer_path, class: "btn btn-primary" %>
