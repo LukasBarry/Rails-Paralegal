@@ -1,3 +1,8 @@
 <h1>Taxes</h1>
 
-<%= render 'form' %>
+<div class="jumbotron">
+  <h4>Paid Through: <%= @tax.paid_through %></h4><br />
+  <h4>Amount: $<%= @tax.amount %></h4><br />
+</div>
+
+<%= link_to "Edit", edit_tax_path, class: "btn btn-primary" %>

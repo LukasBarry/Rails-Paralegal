@@ -1,16 +1,16 @@
 class OccupanciesController < ApplicationController
-  def show
+  def new
     @occupancy = Occupancy.new
   end
 
   def create
     @occupancy = Occupancy.create(occupancy_params)
       if @occupancy.save
-        redirect_to occupancies_path
+        redirect_to @occupancy
       end
   end
 
-  def index
+  def show
     @occupancy = Occupancy.find(params[:id])
   end
 

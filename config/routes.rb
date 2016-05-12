@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get 'new' => 'buyers#new'
   # put 'forms' => 'buyers#create_buyers'
   # root "buyers#show_buyers"
- 
+
   resources :buyers
   resources :constructions
   resources :databases
@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   resources :property_uses
   resources :taxes
 
-  root "buyers#show"
+  root "buyers#new"
 
 end

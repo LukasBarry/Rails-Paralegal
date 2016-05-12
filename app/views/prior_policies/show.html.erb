@@ -1,3 +1,8 @@
 <h1>Prior Title Policies</h1>
 
-<%= render 'form' %>
+<div class="jumbotron">
+  <h4>Is there a Prior Policy: <%= @prior.pp_exists %></h4><br />
+  <h4>Attached Prior: <%= @prior.pp_copy %></h4><br />
+</div>
+
+<%= link_to "Edit", edit_prior_policy_path, class: "btn btn-primary" %>

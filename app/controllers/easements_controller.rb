@@ -1,16 +1,16 @@
 class EasementsController < ApplicationController
-  def show
+  def new
     @easement = Easement.new
   end
 
   def create
     @easement = Easement.create(easement_params)
       if @easement.save
-        redirect_to easements_path
+        redirect_to @easement
       end
   end
 
-  def index
+  def show
     @easement = Easement.find(params[:id])
   end
 
