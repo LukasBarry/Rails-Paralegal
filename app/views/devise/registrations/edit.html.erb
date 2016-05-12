@@ -8,6 +8,31 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :firm_name %><br />
+    <%= f.text_field :firm_name, placeholder: "Name of law firm" %>
+  </div> <br />
+
+  <div class="field">
+    <%= f.label :attorney_name %><br />
+    <%= f.text_field :attorney_name, placeholder: "Name of attorney" %>
+  </div> <br />
+
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.telephone_field :phone_number %>
+  </div> <br />
+
+  <div class="field">
+    <%= f.label :fax_number %><br />
+    <%= f.number_field :fax_number %>
+  </div> <br />
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, placeholder: "Address" %>
+  </div>
+  
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
