@@ -1,21 +1,24 @@
 class ConstructionsController < ApplicationController
   def new
     @construction = Construction.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @construction = Construction.create(construction_params)
       if @construction.save
-        redirect_to @construction
+        redirect_to buyer_path(@construction.buyer_id)
       end
   end
 
   def show
     @construction = Construction.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def edit
     @construction = Construction.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update
@@ -31,6 +34,6 @@ class ConstructionsController < ApplicationController
 
   private
   def construction_params
-    params.require(:construction).permit(:construct_complete, :construct_lien_appointed, :construct_lien_name)
+    params.require(:construction).permit(:construct_complete, :construct_lien_appointed, :construct_lien_name, :buyer_id)
   end
 end

@@ -1,21 +1,24 @@
 class LiensController < ApplicationController
   def new
     @lien = Lien.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @lien = Lien.create(lien_params)
       if @lien.save
-        redirect_to @lien
+        redirect_to buyer_path(@lien.buyer_id)
       end
   end
 
   def show
     @lien = Lien.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def edit
     @lien = Lien.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update
@@ -31,6 +34,6 @@ class LiensController < ApplicationController
 
   private
   def lien_params
-    params.require(:lien).permit(:liens)
+    params.require(:lien).permit(:liens, :buyer_id)
   end
 end
