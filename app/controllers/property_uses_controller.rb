@@ -1,21 +1,24 @@
 class PropertyUsesController < ApplicationController
   def new
     @property = PropertyUse.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @property = PropertyUse.create(property_use_params)
       if @property.save
-        redirect_to @property
+        redirect_to buyer_path(@property.buyer_id)
       end
   end
 
   def show
     @property = PropertyUse.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def edit
     @property = PropertyUse.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update
@@ -31,6 +34,6 @@ class PropertyUsesController < ApplicationController
 
   private
   def property_use_params
-    params.require(:property_use).permit(:property_use_type)
+    params.require(:property_use).permit(:property_use_type, :buyer_id)
   end
 end
