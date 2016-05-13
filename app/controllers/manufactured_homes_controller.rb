@@ -1,21 +1,24 @@
 class ManufacturedHomesController < ApplicationController
   def new
     @manufactured = ManufacturedHome.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @manufactured = ManufacturedHome.create(manufactured_home_params)
       if @manufactured.save
-        redirect_to @manufactured
+        redirect_to buyer_path(@manufactured.buyer_id)
       end
   end
 
   def show
     @manufactured = ManufacturedHome.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def edit
     @manufactured = ManufacturedHome.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update
@@ -31,6 +34,6 @@ class ManufacturedHomesController < ApplicationController
 
   private
   def manufactured_home_params
-    params.require(:manufactured_home).permit(:m_home_exists, :m_home_real_estate, :m_home_affidavit)
+    params.require(:manufactured_home).permit(:m_home_exists, :m_home_real_estate, :m_home_affidavit, :buyer_id)
   end
 end
