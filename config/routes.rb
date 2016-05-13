@@ -6,19 +6,19 @@ Rails.application.routes.draw do
   # put 'forms' => 'buyers#create_buyers'
   # root "buyers#show_buyers"
 
-  resources :buyers
-  resources :constructions
-  resources :databases
-  resources :easements
-  resources :liens
-  resources :manufactured_homes
-  resources :mortgages
-  resources :occupancies
-  resources :prior_policies
-  resources :profiles
-  resources :property_uses
-  resources :taxes
-
+  resources :buyers do
+    resources :constructions
+    resources :databases
+    resources :easements
+    resources :liens
+    resources :manufactured_homes
+    resources :mortgages
+    resources :occupancies
+    resources :prior_policies
+    resources :profiles
+    resources :property_uses
+    resources :taxes
+  end
   root "buyers#new"
 
 end

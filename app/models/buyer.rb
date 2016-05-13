@@ -8,4 +8,5 @@ class Buyer < ActiveRecord::Base
   has_many :prior_policies
   has_many :property_uses
   has_many :taxes
+  belongs_to :user
 end
