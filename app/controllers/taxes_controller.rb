@@ -1,17 +1,20 @@
 class TaxesController < ApplicationController
   def new
     @tax = Tax.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @tax = Tax.create(tax_params)
       if @tax.save
-        redirect_to @tax
+        redirect_to buyer_path(@tax.buyer_id)
       end
   end
 
   def show
     @tax = Tax.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
+
   end
 
   def edit
@@ -31,6 +34,6 @@ class TaxesController < ApplicationController
 
   private
   def tax_params
-    params.require(:tax).permit(:paid_through, :amount)
+    params.require(:tax).permit(:paid_through, :amount, :buyer_id)
   end
 end

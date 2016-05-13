@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512145249) do
+ActiveRecord::Schema.define(version: 20160513152047) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "current_owner"
@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20160512145249) do
     t.string   "alta_endorsement"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
   end
+
+  add_index "buyers", ["user_id"], name: "index_buyers_on_user_id"
 
   create_table "constructions", force: :cascade do |t|
     t.string   "construct_complete"
