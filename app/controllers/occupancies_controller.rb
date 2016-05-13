@@ -1,21 +1,24 @@
 class OccupanciesController < ApplicationController
   def new
     @occupancy = Occupancy.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @occupancy = Occupancy.create(occupancy_params)
       if @occupancy.save
-        redirect_to @occupancy
+        redirect_to buyer_path(@occupancy.buyer_id)
       end
   end
 
   def show
     @occupancy = Occupancy.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def edit
     @occupancy = Occupancy.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update
@@ -31,6 +34,6 @@ class OccupanciesController < ApplicationController
 
   private
   def occupancy_params
-    params.require(:occupancy).permit(:occupants)
+    params.require(:occupancy).permit(:occupants, :buyer_id)
   end
 end

@@ -19,6 +19,7 @@ class TaxesController < ApplicationController
 
   def edit
     @tax = Tax.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update

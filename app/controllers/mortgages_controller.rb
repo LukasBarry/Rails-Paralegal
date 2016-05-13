@@ -1,21 +1,24 @@
 class MortgagesController < ApplicationController
   def new
     @mortgage = Mortgage.new
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def create
     @mortgage = Mortgage.create(mortgage_params)
       if @mortgage.save
-        redirect_to @mortgage
+        redirect_to buyer_path(@mortgage.buyer_id)
       end
   end
 
   def show
     @mortgage = Mortgage.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def edit
     @mortgage = Mortgage.find(params[:id])
+    @buyer = Buyer.find(params[:buyer_id])
   end
 
   def update
@@ -31,6 +34,6 @@ class MortgagesController < ApplicationController
 
   private
   def mortgage_params
-    params.require(:mortgage).permit(:owner, :dated, :book, :page, :amount)
+    params.require(:mortgage).permit(:owner, :dated, :book, :page, :amount, :buyer_id)
   end
 end
