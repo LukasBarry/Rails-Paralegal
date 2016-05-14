@@ -7,7 +7,7 @@ class LiensController < ApplicationController
   def create
     @lien = Lien.create(lien_params)
       if @lien.save
-        redirect_to buyer_path(@lien.buyer_id)
+        redirect_to buyer_lien_path(@lien.buyer_id, @lien.id)
       end
   end
 

@@ -2,5 +2,5 @@
 
 <%= render 'form' %><br />
 
-<%= link_to "Back", prior_policy_path, class: "btn btn-primary" %> |
-<%= link_to "Next", new_manufactured_home_path, class: "btn btn-primary" %>
+<%= link_to "Back", buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %> |
+<%= link_to "Next", new_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %>

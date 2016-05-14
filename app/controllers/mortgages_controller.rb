@@ -7,7 +7,7 @@ class MortgagesController < ApplicationController
   def create
     @mortgage = Mortgage.create(mortgage_params)
       if @mortgage.save
-        redirect_to buyer_path(@mortgage.buyer_id)
+        redirect_to buyer_mortgage_path(@mortgage.buyer_id, @mortgage.id)
       end
   end
 

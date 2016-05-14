@@ -7,7 +7,7 @@ class ManufacturedHomesController < ApplicationController
   def create
     @manufactured = ManufacturedHome.create(manufactured_home_params)
       if @manufactured.save
-        redirect_to buyer_path(@manufactured.buyer_id)
+        redirect_to buyer_manufactured_home_path(@manufactured.buyer_id, @manufactured.id)
       end
   end
 

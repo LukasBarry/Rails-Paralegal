@@ -7,14 +7,13 @@ class TaxesController < ApplicationController
   def create
     @tax = Tax.create(tax_params)
       if @tax.save
-        redirect_to buyer_tax_path(@tax.buyer_id)
+        redirect_to buyer_tax_path(@tax.buyer_id, @tax.id)
       end
   end
 
   def show
     @tax = Tax.find(params[:id])
     @buyer = Buyer.find(params[:buyer_id])
-
   end
 
   def edit

@@ -7,7 +7,7 @@ class OccupanciesController < ApplicationController
   def create
     @occupancy = Occupancy.create(occupancy_params)
       if @occupancy.save
-        redirect_to buyer_path(@occupancy.buyer_id)
+        redirect_to buyer_occupancy_path(@occupancy.buyer_id, @occupancy.id)
       end
   end
 

@@ -7,7 +7,7 @@ class PropertyUsesController < ApplicationController
   def create
     @property = PropertyUse.create(property_use_params)
       if @property.save
-        redirect_to buyer_path(@property.buyer_id)
+        redirect_to buyer_property_use_path(@property.buyer_id, @property.id)
       end
   end
 

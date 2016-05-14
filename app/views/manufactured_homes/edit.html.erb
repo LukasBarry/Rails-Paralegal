@@ -2,5 +2,5 @@
 
 <%= render 'form' %><br />
 
-<%= link_to "Back", manufactured_home_path, class: "btn btn-primary" %> |
-<%= link_to "Next", new_occupancy_path, class: "btn btn-primary" %>
+<%= link_to "Back", buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %> |
+<%= link_to "Next", new_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %>

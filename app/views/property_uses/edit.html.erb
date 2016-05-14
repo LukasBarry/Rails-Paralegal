@@ -2,5 +2,5 @@
 
 <%= render 'form' %><br />
 
-<%= link_to "Back", property_use_path, class: "btn btn-primary" %> |
-<%= link_to "Next", new_mortgage_path, class: "btn btn-primary" %>
+<%= link_to "Back", buyer_property_use_path(@buyer, @property), class: "btn btn-primary" %> |
+<%= link_to "Next", new_buyer_mortgage_path(@buyer, @mortgage), class: "btn btn-primary" %>

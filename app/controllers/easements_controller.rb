@@ -7,7 +7,7 @@ class EasementsController < ApplicationController
   def create
     @easement = Easement.create(easement_params)
       if @easement.save
-        redirect_to buyer_path(@easement.buyer_id)
+        redirect_to buyer_easement_path(@easement.buyer_id, @easement.id)
       end
   end
 

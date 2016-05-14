@@ -2,5 +2,5 @@
 
 <%= render 'form' %><br />
 
-<%= link_to "Back", lien_path, class: "btn btn-primary" %> |
-<%= link_to "Next", new_easement_path, class: "btn btn-primary" %>
+<%= link_to "Back", buyer_lien_path(@buyer, @lien), class: "btn btn-primary" %> |
+<%= link_to "Next", new_buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %>

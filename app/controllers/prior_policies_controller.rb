@@ -7,7 +7,7 @@ class PriorPoliciesController < ApplicationController
   def create
     @prior = PriorPolicy.create(prior_policy_params)
       if @prior.save
-        redirect_to buyer_path(@prior.buyer_id)
+        redirect_to buyer_prior_policy_path(@prior.buyer_id, @prior.id)
       end
   end
 

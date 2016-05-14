@@ -6,5 +6,5 @@
   <h4>Housing Affidavit: <%= @manufactured.m_home_affidavit %></h4><br />
 </div>
 
-<%= link_to "Next", new_occupancy_path, class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_manufactured_home_path, class: "btn btn-primary" %>
+<%= link_to "Next", new_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %> |
+<%= link_to "Edit", edit_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %>

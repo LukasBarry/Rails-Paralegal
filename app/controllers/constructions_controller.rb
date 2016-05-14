@@ -7,7 +7,7 @@ class ConstructionsController < ApplicationController
   def create
     @construction = Construction.create(construction_params)
       if @construction.save
-        redirect_to buyer_path(@construction.buyer_id)
+        redirect_to buyer_construction_path(@construction.buyer_id, @construction.id)
       end
   end
 

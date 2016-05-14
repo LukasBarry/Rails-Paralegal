@@ -5,3 +5,7 @@
  .container {
     background: rgba(255, 255, 255, 0.7);
   }
+
+.cant-be-seen {
+  display: none;
+}

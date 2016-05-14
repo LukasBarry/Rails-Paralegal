@@ -6,5 +6,5 @@
   <h4>Construction Lien Agent: <%= @construction.construct_lien_name %></h4><br />
 </div>
 
-<%= link_to "Next", new_property_use_path, class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_construction_path, class: "btn btn-primary" %>
+<%= link_to "Next", new_buyer_property_use_path(@buyer, @property), class: "btn btn-primary" %> |
+<%= link_to "Edit", edit_buyer_construction_path(@buyer, @construction), class: "btn btn-primary" %>
