@@ -1,10 +1,16 @@
-<h1>Mobile/Manufactured Homes</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Mobile/Manufactured Homes</h1>
 
-<div class="jumbotron">
-  <h4>Is This a Mobile/Manufactured Home: <%= @manufactured.m_home_exists %></h4><br />
-  <h4>Is it Affixed: <%= @manufactured.m_home_real_estate %></h4><br />
-  <h4>Housing Affidavit: <%= @manufactured.m_home_affidavit %></h4><br />
+    <div class="jumbotron">
+      <h4>Is This a Mobile/Manufactured Home: <%= @manufactured.m_home_exists %></h4><br />
+      <h4>Is it Affixed: <%= @manufactured.m_home_real_estate %></h4><br />
+      <h4>Housing Affidavit: <%= @manufactured.m_home_affidavit %></h4><br />
+    </div>
+
+    <%= link_to "Next", new_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %> |
+    <%= link_to "Edit", edit_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %>
 </div>
-
-<%= link_to "Next", new_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %>

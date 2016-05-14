@@ -1,10 +1,16 @@
-<h1>Easement and Right of Way Information</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Easement and Right of Way Information</h1>
 
-<div class="jumbotron">
-  <h4>Any Easements or Right of Ways: <%= @easement.exists %></h4><br />
-  <h4>Effects on Property: <%= @easement.effects %></h4><br />
-  <h4>Attached Easements/Right of Ways: <%= @easement.recorded_easement %></h4><br />
+    <div class="jumbotron">
+      <h4>Any Easements or Right of Ways: <%= @easement.exists %></h4><br />
+      <h4>Effects on Property: <%= @easement.effects %></h4><br />
+      <h4>Attached Easements/Right of Ways: <%= @easement.recorded_easement %></h4><br />
+    </div>
+
+    <%= link_to "Next", new_buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %> |
+    <%= link_to "Edit", edit_buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %>
 </div>
-
-<%= link_to "Next", new_buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %>

@@ -1,6 +1,12 @@
-<h1>Mobile/Manufactured Homes</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Mobile/Manufactured Homes</h1>
 
-<%= render 'form' %><br />
+    <%= render 'form' %><br />
 
-<%= link_to "Back", buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %> |
-<%= link_to "Next", new_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %>
+    <%= link_to "Back", buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %> |
+    <%= link_to "Next", new_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %>
+</div>

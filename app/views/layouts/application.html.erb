@@ -54,27 +54,7 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div class="container">
-      <% if user_signed_in? %>
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked">
-        <li><a href="#">Borrower</a></li>
-        <li><a href="#">Taxes</a></li>
-        <li><a href="#">Liens</a></li>
-        <li><a href="#">Right Of Way/Easements</a></li>
-        <li><a href="#">Prior Policy</a></li>
-        <li><a href="#">Manufactured Home</a></li>
-        <li><a href="#">Occupancy Status</a></li>
-        <li><a href="#">Construction</a></li>
-        <li><a href="#">Property Use</a></li>
-        <li><a href="#">Mortgages</a></li>
-      </ul>
-      </div>
-      <% end %>
-      <div class="col-md-9">
     <%= yield %>
-      </div>
-  </div>
 
 </body>
 </html>

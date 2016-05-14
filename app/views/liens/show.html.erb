@@ -1,9 +1,15 @@
-<h1>Open Liens</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Open Liens</h1>
 
-<div class="jumbotron">
-  <h4>Lien Numbers: <%= @lien.liens %></h4><br />
-  <h4>Lien Amount: $<%= @lien.lien_amount %></h4><br />
-</div>
+    <div class="jumbotron">
+      <h4>Lien Numbers: <%= @lien.liens %></h4><br />
+      <h4>Lien Amount: $<%= @lien.lien_amount %></h4><br />
+    </div>
 
-<%= link_to "Next", new_buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_buyer_lien_path(@buyer, @lien), class: "btn btn-primary" %>
+    <%= link_to "Next", new_buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %> |
+    <%= link_to "Edit", edit_buyer_lien_path(@buyer, @lien), class: "btn btn-primary" %>
+  </div>

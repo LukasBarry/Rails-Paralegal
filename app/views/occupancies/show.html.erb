@@ -1,8 +1,14 @@
-<h1>Current Occupants</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Current Occupants</h1>
 
-<div class="jumbotron">
-  <h4>Current Occupants: <%= @occupancy.occupants %></h4><br />
+    <div class="jumbotron">
+      <h4>Current Occupants: <%= @occupancy.occupants %></h4><br />
+    </div>
+
+    <%= link_to "Next", new_buyer_construction_path(@buyer, @construction), class: "btn btn-primary" %> |
+    <%= link_to "Edit", edit_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %>
 </div>
-
-<%= link_to "Next", new_buyer_construction_path(@buyer, @construction), class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_buyer_occupancy_path(@buyer, @occupancy), class: "btn btn-primary" %>
