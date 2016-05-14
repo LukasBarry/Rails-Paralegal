@@ -1,10 +1,16 @@
-<h1>Construction Information</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Construction Information</h1>
 
-<div class="jumbotron">
-  <h4>Is there Construction on the property: <%= @construction.construct_complete %></h4><br />
-  <h4>Has A Construction Lien Agent Been Appointed: <%= @construction.construct_lien_appointed %></h4><br />
-  <h4>Construction Lien Agent: <%= @construction.construct_lien_name %></h4><br />
+    <div class="jumbotron">
+      <h4>Is there Construction on the property: <%= @construction.construct_complete %></h4><br />
+      <h4>Has A Construction Lien Agent Been Appointed: <%= @construction.construct_lien_appointed %></h4><br />
+      <h4>Construction Lien Agent: <%= @construction.construct_lien_name %></h4><br />
+    </div>
+
+    <%= link_to "Next", new_buyer_property_use_path(@buyer, @property), class: "btn btn-primary" %> |
+    <%= link_to "Edit", edit_buyer_construction_path(@buyer, @construction), class: "btn btn-primary" %>
 </div>
-
-<%= link_to "Next", new_buyer_property_use_path(@buyer, @property), class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_buyer_construction_path(@buyer, @construction), class: "btn btn-primary" %>

@@ -1,6 +1,12 @@
-<h1>Easement/Right of Way Information</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Easement/Right of Way Information</h1>
 
-<%= render 'form' %><br />
+    <%= render 'form' %><br />
 
-<%= link_to "Back", buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %> |
-<%= link_to "Next", new_buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %>
+    <%= link_to "Back", buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %> |
+    <%= link_to "Next", new_buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %>
+</div>

@@ -1,9 +1,15 @@
-<h1>Prior Title Policies</h1>
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Prior Title Policies</h1>
 
-<div class="jumbotron">
-  <h4>Is there a Prior Policy: <%= @prior.pp_exists %></h4><br />
-  <h4>Attached Prior: <%= @prior.pp_copy %></h4><br />
+    <div class="jumbotron">
+      <h4>Is there a Prior Policy: <%= @prior.pp_exists %></h4><br />
+      <h4>Attached Prior: <%= @prior.pp_copy %></h4><br />
+    </div>
+
+    <%= link_to "Next", new_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %> |
+    <%= link_to "Edit", edit_buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %>
 </div>
-
-<%= link_to "Next", new_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %> |
-<%= link_to "Edit", edit_buyer_prior_policy_path(@buyer, @prior), class: "btn btn-primary" %>

@@ -1,6 +1,12 @@
-<h1>Property Use</h1><br />
+<div class="container">
+  <div class="col-md-3">
+<%= render 'navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Property Use</h1><br />
 
-<%= render 'form' %><br />
+    <%= render 'form' %><br />
 
-<%= link_to "Back", buyer_property_use_path(@buyer, @property), class: "btn btn-primary" %> |
-<%= link_to "Next", new_buyer_mortgage_path(@buyer, @mortgage), class: "btn btn-primary" %>
+    <%= link_to "Back", buyer_property_use_path(@buyer, @property), class: "btn btn-primary" %> |
+    <%= link_to "Next", new_buyer_mortgage_path(@buyer, @mortgage), class: "btn btn-primary" %>
+</div>
