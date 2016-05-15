@@ -1,0 +1,24 @@
+<h1>County Property Information</h1>
+
+<div class="jumbotron">
+  <%= @database.each do |database| %>
+    <h4>Account Number: <%= database.account_number %></h4>
+    <h4>Tax Year: <%= database.tax_year %></h4>
+    <h4>Real Estate ID: <%= database.real_estate_id %></h4>
+    <h4>Primary Owner: <%= database.primary_owner %></h4>
+    <h4>Street Address: <%= database.street_number %><%= database.street_name %></h4>
+    <h4>Deed Book: <%= database.deed_book %></h4>
+    <h4>Deed Page: <%= database.deed_page %></h4>
+    <h4>Building Value: <%= database.building_value %></h4>
+    <h4>Land Value: <%= database.land_value %></h4>
+    <h4>Total Property Value: <%= database.total_value %></h4>
+    <h4>Total Taxes Billed: <%= database.total_tax_billed %></h4>
+    <h4>Total Taxes Due: <%= database.total_tax_due %></h4>
+  <% end %>
+</div>
+
+<h2>Search County</h2>
+<%= form_tag import_data_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Search", class: "btn btn-primary btn-lg" %>
+<% end %>
