@@ -2,7 +2,7 @@
     <% if user_signed_in? %>
       <ul class="nav nav-pills nav-stacked">
       <li><a href="#">Borrower</a></li>
-      <li><%=link_to "Taxes", edit_buyer_tax_path(@buyer, @buyer.tax)%></li>
+      <li><%= link_to "Taxes", edit_buyer_tax_path(@buyer, @buyer.tax) %></li>
       <li><%=link_to "Liens", edit_buyer_lien_path(@buyer, @buyer.lien)%></li>
       <li><%=link_to "Right Of Way/Easements", edit_buyer_easement_path(@buyer, @buyer.easement)%></li>
       <li><%=link_to "Prior Policy", edit_buyer_prior_policy_path(@buyer, @buyer.prior_policy)%></li>
