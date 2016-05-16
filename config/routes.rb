@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :profiles
     resources :property_uses
     resources :taxes
+    resources :overview
   end
   root "buyers#new"
 

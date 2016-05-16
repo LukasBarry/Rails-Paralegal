@@ -4,4 +4,4 @@
   <h4>Effects on Property: <%= @easement.effects %></h4><br />
   <h4>Attached Easements/Right of Ways: <%= @easement.recorded_easement %></h4><br />
 </div>
-<%= link_to "Edit", edit_easement_path, class: "btn btn-primary" %>
+<%= link_to "Edit", edit_buyer_easement_path(@buyer, @easement), class: "btn btn-primary" %>
