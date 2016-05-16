@@ -24,7 +24,7 @@ class ManufacturedHomesController < ApplicationController
   def update
     @manufactured = ManufacturedHome.find(params[:id])
     respond_to do |format|
-      if @manufactured.update(manufactured_params)
+      if @manufactured.update(manufactured_home_params)
         format.html {redirect_to buyer_manufactured_home_path(@manufactured.buyer_id, @manufactured), notice: "Mobile Home info has been updated"}
       else
         format.html {render :edit}
