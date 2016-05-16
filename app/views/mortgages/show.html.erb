@@ -1,1 +1,17 @@
+<div class="container">
+  <div class="col-md-3">
+    <%= render 'buyers/navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>Mortgages</h1>
+      <div class="jumbotron">
+        <h4>Name on Deed of Trust: <%= @mortgage.owner %></h4><br />
+        <h4>Date Recorded: <%= @mortgage.dated %></h4><br />
+        <h4>Book: <%= @mortgage.book %></h4><br />
+        <h4>Page: <%= @mortgage.page %></h4><br />
+        <h4>Amount: <%= @mortgage.amount %></h4><br />
 
+<%= link_to "Edit", edit_buyer_mortgage_path(@buyer, @mortgage), class: "btn btn-primary" %>
+      </div>
+  </div>
+</div>

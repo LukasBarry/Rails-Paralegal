@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-md-3">
-<%= render 'navbar' %>
+<%= render 'buyers/navbar' %>
   </div>
   <div class="col-md-9">
 <h1>Taxes</h1>
@@ -21,7 +21,7 @@
     <%= f.submit class: "btn btn-primary btn-lg" %>
 </div>
 <% end %>
-<br /
+<br />
 
 <%= link_to "Back", buyer_tax_path(@buyer, @tax), class: "btn btn-primary" %> |
 <%= link_to "Next", new_buyer_lien_path(@buyer, @lien), class: "btn btn-primary" %>
