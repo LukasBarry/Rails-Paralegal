@@ -3,4 +3,4 @@
   <h4>Lien Numbers: <%= @lien.liens %></h4><br />
   <h4>Lien Amount: $<%= @lien.lien_amount %></h4><br />
 </div>
-<%= link_to "Edit", edit_lien_path, class: "btn btn-primary" %>
+<%= link_to "Edit", edit_buyer_lien_path(@buyer, @lien), class: "btn btn-primary" %>
