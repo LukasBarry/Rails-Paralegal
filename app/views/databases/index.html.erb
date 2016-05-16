@@ -1,19 +1,21 @@
 <h1>County Property Information</h1>
 
 <div class="jumbotron">
+  <%= if @buyer.property_address == "#{@database.column(31)} #{@database.column(32)}" %>
   <%= @database.each do |database| %>
-    <h4>Account Number: <%= database.account_number %></h4>
-    <h4>Tax Year: <%= database.tax_year %></h4>
-    <h4>Real Estate ID: <%= database.real_estate_id %></h4>
-    <h4>Primary Owner: <%= database.primary_owner %></h4>
-    <h4>Street Address: <%= database.street_number %><%= database.street_name %></h4>
-    <h4>Deed Book: <%= database.deed_book %></h4>
-    <h4>Deed Page: <%= database.deed_page %></h4>
-    <h4>Building Value: <%= database.building_value %></h4>
-    <h4>Land Value: <%= database.land_value %></h4>
-    <h4>Total Property Value: <%= database.total_value %></h4>
-    <h4>Total Taxes Billed: <%= database.total_tax_billed %></h4>
-    <h4>Total Taxes Due: <%= database.total_tax_due %></h4>
+    <h4>Account Number: <%= database.column(2) %></h4>
+    <h4>Tax Year: <%= database.column(3) %></h4>
+    <h4>Real Estate ID: <%= database.column(16) %></h4>
+    <h4>Primary Owner: <%= database.column(23) %></h4>
+    <h4>Street Address: <%= database.column(31) %><%= database.column(32) %></h4>
+    <h4>Deed Book: <%= database.column(38) %></h4>
+    <h4>Deed Page: <%= database.column(39) %></h4>
+    <h4>Building Value: <%= database.column(53) %></h4>
+    <h4>Land Value: <%= database.column(54) %></h4>
+    <h4>Total Property Value: <%= database.column(59) %></h4>
+    <h4>Total Taxes Billed: <%= database.column(71) %></h4>
+    <h4>Total Taxes Due: <%= database.column(75) %></h4>
+  <% end %>
   <% end %>
 </div>
 
