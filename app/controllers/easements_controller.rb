@@ -6,9 +6,12 @@ class EasementsController < ApplicationController
 
   def create
     @easement = Easement.create(easement_params)
+    respond_to do |format|
       if @easement.save
-        redirect_to buyer_easement_path(@easement.buyer_id, @easement.id)
+        format.html {redirect_to buyer_easement_path(@easement.buyer_id, @easement), notice: "Easement info has been updated"}
+      else render 'new'
       end
+    end
   end
 
   def show
@@ -25,7 +28,7 @@ class EasementsController < ApplicationController
     @easement = Easement.find(params[:id])
     respond_to do |format|
       if @easement.update(easement_params)
-        format.html {redirect_to @easement, notice: "Easement info has been updated"}
+        format.html {redirect_to buyer_easement_path(@easement.buyer_id, @easement), notice: "Easement info has been updated"}
       else
         format.html {render :edit}
       end

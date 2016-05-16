@@ -25,7 +25,7 @@ class LiensController < ApplicationController
     @lien = Lien.find(params[:id])
     respond_to do |format|
       if @lien.update(lien_params)
-        format.html {redirect_to @lien, notice: "Lien info has been updated"}
+        format.html {redirect_to buyer_lien_path(@lien.buyer_id, @lien), notice: "Lien info has been updated"}
       else
         format.html {render :edit}
       end

@@ -7,7 +7,7 @@
 
     <div class="jumbotron">
       <h4>Is there a Prior Policy: <%= @prior.pp_exists %></h4><br />
-      <h4>Attached Prior: <%= @prior.pp_copy %></h4><br />
+      <h4>Attached Prior: <%= link_to "PDF", @prior.pp_copy.url, target: "blank" %></h4><br />
     </div>
 
     <%= link_to "Next", new_buyer_manufactured_home_path(@buyer, @manufactured), class: "btn btn-primary" %> |

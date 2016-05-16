@@ -25,7 +25,7 @@ class MortgagesController < ApplicationController
     @mortgage = Mortgage.find(params[:id])
     respond_to do |format|
       if @mortgage.update(mortgage_params)
-        format.html {redirect_to @mortgage, notice: "Mortgage info has been updated"}
+        format.html {redirect_to buyer_mortgage_path(@mortgage.buyer_id, @mortgage), notice: "Mortgage info has been updated"}
       else
         format.html {render :edit}
       end

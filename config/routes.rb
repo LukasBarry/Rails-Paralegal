@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     resources :taxes
     resources :overview
   end
+
+  resources :databases do
+    collection { post :import }
+  end
+
   root "buyers#new"
 
 end
