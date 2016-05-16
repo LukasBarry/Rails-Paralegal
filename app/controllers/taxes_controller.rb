@@ -25,7 +25,7 @@ class TaxesController < ApplicationController
     @tax = Tax.find(params[:id])
     respond_to do |format|
       if @tax.update(tax_params)
-        format.html {redirect_to @tax, notice: "Tax info has been updated"}
+        format.html {redirect_to buyer_tax_path(@tax.buyer_id, @tax), notice: "Tax info has been updated"}
       else
         format.html {render :edit}
       end

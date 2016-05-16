@@ -25,7 +25,7 @@ class OccupanciesController < ApplicationController
     @occupancy = Occupancy.find(params[:id])
     respond_to do |format|
       if @occupancy.update(occupancy_params)
-        format.html {redirect_to @occupancy, notice: "Client info has been updated"}
+        format.html {redirect_to buyer_occupancy_path(@occupancy.buyer_id, @occupancy), notice: "Client info has been updated"}
       else
         format.html {render :edit}
       end

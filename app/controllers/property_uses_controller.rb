@@ -25,7 +25,7 @@ class PropertyUsesController < ApplicationController
     @property = PropertyUse.find(params[:id])
     respond_to do |format|
       if @property.update(property_params)
-        format.html {redirect_to @property, notice: "Property use info has been updated"}
+        format.html {redirect_to buyer_property_use_path(@property.buyer_id, @property), notice: "Property use info has been updated"}
       else
         format.html {render :edit}
       end

@@ -25,7 +25,7 @@ class ConstructionsController < ApplicationController
     @construction = Construction.find(params[:id])
     respond_to do |format|
       if @construction.update(construction_params)
-        format.html {redirect_to @construction, notice: "Construction info has been updated"}
+        format.html {redirect_to buyer_construction_path(@construction.buyer_id, @construction), notice: "Construction info has been updated"}
       else
         format.html {render :edit}
       end
