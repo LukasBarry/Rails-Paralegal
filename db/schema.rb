@@ -170,8 +170,8 @@ ActiveRecord::Schema.define(version: 20160517145606) do
     t.datetime "updated_at",                          null: false
     t.string   "firm_name"
     t.string   "attorney_name"
-    t.integer  "phone_number"
-    t.integer  "fax_number"
+    t.string   "phone_number"
+    t.string   "fax_number"
     t.text     "address"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
