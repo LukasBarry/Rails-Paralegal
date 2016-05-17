@@ -1,5 +1,6 @@
 class DatabasesController < ApplicationController
   def index
+    @buyer = Buyer.find(params[:id])
     @database = Database.order(:street_number, :street_name)
     # respond_to do |format|
     #   format.html

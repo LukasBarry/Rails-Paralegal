@@ -1,6 +1,6 @@
 class Database < ActiveRecord::Base
-  # attr_accessible :account_number, :tax_year, :real_estate_id, :primary_owner, :street_number, :street_name, :deed_book, :deed_page, :building_value, :land_value, :total_value, :total_tax_billed, :total_tax_due
-
+  belongs_to :buyer
+  
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
     header = spreadsheet.row(1)
