@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160517175335) do
   create_table "databases", force: :cascade do |t|
     t.integer  "account_number"
     t.integer  "tax_year"
-    t.integer  "real_estate_num"
+    t.integer  "real_estate_id"
     t.string   "primary_owner"
     t.integer  "street_number"
     t.string   "street_name"
