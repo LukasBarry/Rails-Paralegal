@@ -1,2 +1,2 @@
-module BuyersHelper
-end
+ module BuyersHelper
+ end

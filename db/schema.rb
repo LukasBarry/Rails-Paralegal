@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517145606) do
+ActiveRecord::Schema.define(version: 20160517175335) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "current_owner"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160517145606) do
   create_table "databases", force: :cascade do |t|
     t.integer  "account_number"
     t.integer  "tax_year"
-    t.integer  "real_estate_id"
+    t.integer  "real_estate_num"
     t.string   "primary_owner"
     t.integer  "street_number"
     t.string   "street_name"
@@ -61,7 +61,10 @@ ActiveRecord::Schema.define(version: 20160517145606) do
     t.integer  "total_tax_due"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "buyer_id"
   end
+
+  add_index "databases", ["buyer_id"], name: "index_databases_on_buyer_id"
 
   create_table "easements", force: :cascade do |t|
     t.string   "exists"
