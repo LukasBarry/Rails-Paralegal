@@ -8,5 +8,6 @@ class Buyer < ActiveRecord::Base
   has_one :prior_policy
   has_one :property_use
   has_one :tax
+  has_one :database
   belongs_to :user
 end

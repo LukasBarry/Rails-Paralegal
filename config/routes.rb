@@ -19,10 +19,7 @@ Rails.application.routes.draw do
     resources :property_uses
     resources :taxes
     resources :overview
-  end
-
-  resources :databases do
-    collection { post :import }
+    resources :databases
   end
 
   root "buyers#new"

@@ -1,0 +1,20 @@
+<div class="col-md-3">
+<%= render 'buyers/navbar' %>
+</div>
+<div class="col-md-9">
+  <h1>County Property Information</h1>
+  <div class="jumbotron">
+      <h4>Account Number: <%= @database.account_number %></h4><br />
+      <h4>Tax Year: <%= @database.tax_year %></h4><br />
+      <h4>Real Estate ID: <%= @database.real_estate_num %></h4><br />
+      <h4>Primary Owner: <%= @database.primary_owner %></h4><br />
+      <h4>Street Address: <%= @database.street_number %> <%= @database.street_name %></h4><br />
+      <h4>Deed Book: <%= @database.deed_book %></h4><br />
+      <h4>Deed Page: <%= @database.deed_page %></h4><br />
+      <h4>Building Value: <%= @database.building_value %></h4><br />
+      <h4>Land Value: <%= @database.land_value %></h4><br />
+      <h4>Total Property Value: <%= @database.total_value %></h4><br />
+      <h4>Total Taxes Billed: <%= @database.total_tax_billed %></h4><br />
+      <h4>Total Taxes Due: <%= @database.total_tax_due %></h4><br />
+  </div>
+</div>

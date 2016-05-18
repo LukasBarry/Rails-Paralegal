@@ -1,20 +1,25 @@
 class DatabasesController < ApplicationController
-  def index
-    @database = Database.order(:street_number, :street_name)
-    # respond_to do |format|
-    #   format.html
-      # format.csv { send_data @database.to_csv }
-      # format.xls { send_data @database.to_csv(col_sep: "\t") }
-    # end
+  def new
+    @buyer = Buyer.find(params[:buyer_id])
+    @database = Database.new
   end
-
-  def import
-    Database.import(params[:file])
-    redirect_to databases_path, notice: "Database pulled from County"
+  def show
+    @buyer = Buyer.find(params[:buyer_id])
+    @database = Database.find(params[:id])
+  end
+  def create
+    @database = Database.new(database_params)
+    respond_to do |format|
+      if @database.save
+          format.html {redirect_to buyer_database_path(@database.buyer_id, @database), notice: "Client info has been updated"}
+        else
+          format.html {render :new}
+        end
+      end
   end
 
   private
   def database_params
-    params.require(:database).permit(:account_number, :tax_year, :real_estate_id, :primary_owner, :street_number, :street_name, :deed_book, :deed_page, :building_value, :land_value, :total_value, :total_tax_billed, :total_tax_due)
+    params.require(:database).permit(:account_number, :tax_year, :real_estate_num, :primary_owner, :street_number, :street_name, :deed_book, :deed_page, :building_value, :land_value, :total_value, :total_tax_billed, :total_tax_due, :buyer_id)
   end
 end

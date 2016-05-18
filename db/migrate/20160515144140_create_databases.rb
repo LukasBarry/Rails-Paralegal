@@ -3,7 +3,7 @@ class CreateDatabases < ActiveRecord::Migration
     create_table :databases do |t|
       t.integer :account_number
       t.integer :tax_year
-      t.integer :real_estate_id
+      t.integer :real_estate_num
       t.string :primary_owner
       t.integer :street_number
       t.string :street_name

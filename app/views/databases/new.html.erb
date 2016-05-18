@@ -1,0 +1,39 @@
+<% person(@buyer.property_address.upcase!) %>
+  <div class="col-md-3">
+    <%= render 'buyers/navbar' %>
+  </div>
+  <div class="col-md-9">
+    <h1>County Property Information</h1>
+    <div class="jumbotron">
+          <h4>Account Number: <%= $testing[0] %></h4><br />
+          <h4>Tax Year: <%= $testing[1] %></h4><br />
+          <h4>Real Estate ID: <%= $testing[4] %></h4><br />
+          <h4>Primary Owner: <%= $testing[9] %></h4><br />
+          <h4>Street Address: <%= $testing[16] %> <%= $testing[17] %></h4><br />
+          <h4>Deed Book: <%= $testing[21] %></h4><br />
+          <h4>Deed Page: <%= $testing[22] %></h4><br />
+          <h4>Building Value: <%= $testing[25] %></h4><br />
+          <h4>Land Value: <%= $testing[26] %></h4><br />
+          <h4>Total Property Value: <%= $testing[27] %></h4><br />
+          <h4>Total Taxes Billed: <%= $testing[38] %></h4><br />
+          <h4>Total Taxes Due: <%= $testing[42] %></h4><br />
+    </div>
+
+<%= form_for @database, url: buyer_databases_path(@buyer), method: :post do |f| %>
+  <%= f.hidden_field :account_number, value: $testing[0].to_i %>
+  <%= f.hidden_field :tax_year, value: $testing[1].to_i %>
+  <%= f.hidden_field :real_estate_num, value: $testing[4].to_i %>
+  <%= f.hidden_field :primary_owner, value: $testing[9] %>
+  <%= f.hidden_field :street_number, value: $testing[16].to_i %>
+  <%= f.hidden_field :street_name, value: $testing[17] %>
+  <%= f.hidden_field :deed_book, value: $testing[21].to_i %>
+  <%= f.hidden_field :deed_page, value: $testing[22].to_i %>
+  <%= f.hidden_field :building_value, value: $testing[25].to_i %>
+  <%= f.hidden_field :land_value, value: $testing[26].to_i %>
+  <%= f.hidden_field :total_value, value: $testing[27].to_i %>
+  <%= f.hidden_field :total_tax_billed, value: $testing[38].to_i %>
+  <%= f.hidden_field :total_tax_due, value: $testing[42].to_i %>
+  <%= f.hidden_field :buyer_id, value: @buyer.id %>
+  <%= submit_tag "Next", class: "btn btn-primary" %>
+<% end %>
+</div>
