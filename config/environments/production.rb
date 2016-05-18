@@ -1,6 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
+  config.action_mailer.default_url_options = {host: 'localhost:3000' }
+  config.action_mailer.default charset: 'utf-8'
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'gmail.com',
+    user_name: ENV['em'],
+    password: ENV['pw'],
+    authentication: 'plain',
+    enable_starttls_auto: true
   # Code is not reloaded between requests.
   config.cache_classes = true
 

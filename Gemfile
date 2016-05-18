@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'paperclip'
-gem 'roo', '~> 2.4.0'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
@@ -23,4 +23,9 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'awesome_print'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
