@@ -9,5 +9,5 @@
  <li><%= link_check("construction") %></li>
  <li><%= link_check("property_use") %></li>
  <li><%= link_check("mortgage") %></li>
- <li><%= link_check("database") %></li>
+ <li><%= link_check("database") if @buyer.property_address.present? %></li>
 </ul>

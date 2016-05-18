@@ -22,9 +22,9 @@ class PriorPoliciesController < ApplicationController
   end
 
   def update
-    @prior = Prior.find(params[:id])
+    @prior = PriorPolicy.find(params[:id])
     respond_to do |format|
-      if @prior.update(prior_params)
+      if @prior.update(prior_policy_params)
         format.html {redirect_to buyer_prior_policy_path(@prior.buyer_id, @prior), notice: "Prior Policy info has been updated"}
       else
         format.html {render :edit}
