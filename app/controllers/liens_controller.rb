@@ -34,6 +34,6 @@ class LiensController < ApplicationController
 
   private
   def lien_params
-    params.require(:lien).permit(:liens, :buyer_id)
+    params.require(:lien).permit(:liens, :lien_amount, :buyer_id)
   end
 end
