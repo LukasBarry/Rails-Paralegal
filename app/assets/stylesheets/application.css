@@ -2,10 +2,17 @@
  *= require_tree .
  *= require_self
  */
- .container {
-    background: rgba(255, 255, 255, 0.7);
-  }
 
 .cant-be-seen {
   display: none;
+}
+
+body {
+  background-image: url("paralegalapp-logo");
+  background-size: cover;
+  margin: 17px;
+}
+
+.jumbotron {
+  opacity: 0.75;
 }
