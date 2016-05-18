@@ -15,7 +15,7 @@
   	<br />
   </div>
   <div class="span7 text-center">
-  <%= link_to "Submit", class: "btn btn-primary" %>
+  <%= link_to "Submit", buyer_overview_index_path(@buyer), method: FormMailer.completed_form(current_user, @buyer).deliver, method: :get, class: "btn btn-danger" %>
 	</div>
 	<br />
 </div>

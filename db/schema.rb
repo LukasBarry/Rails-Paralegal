@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20160517175335) do
   create_table "databases", force: :cascade do |t|
     t.integer  "account_number"
     t.integer  "tax_year"
-    t.integer  "real_estate_id"
+    t.integer  "real_estate_num"
     t.string   "primary_owner"
     t.integer  "street_number"
     t.string   "street_name"
@@ -173,8 +173,8 @@ ActiveRecord::Schema.define(version: 20160517175335) do
     t.datetime "updated_at",                          null: false
     t.string   "firm_name"
     t.string   "attorney_name"
-    t.integer  "phone_number"
-    t.integer  "fax_number"
+    t.string   "phone_number"
+    t.string   "fax_number"
     t.text     "address"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
