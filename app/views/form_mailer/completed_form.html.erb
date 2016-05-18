@@ -1,10 +1,96 @@
 <p>
   Hi <%= @user.email %>, thank you for using our services.
+    Here is your Title Record Information:
 </p>
 
 
 <p>
-  Here is your Title Record Information:
-  <%=  @buyer.current_owner %>
-  <%= @buyer.tax.paid_through %>
+  <h3>Client Information</h3>
+  <b>Current Owner:</b> <%= @buyer.current_owner %><br />
+  <b>Borrower:</b> <%= @buyer.borrower %><br />
+  <b>Property Address:</b> <%= @buyer.property_address %><br />
+  <b>County:</b> <%= @buyer.county %><br />
+  <b>Purchase Price:</b> <%= @buyer.purchase_price %><br />
+  <b>Owner's Coverage Amount:</b> <%= @buyer.owners_coverage %><br />
+  <b>Lender Name:</b> <%= @buyer.lender_name %><br />
+  <b>Type of Loan:</b> <%= @buyer.type_of_loan %><br />
+  <b>Loan Number:</b> <%= @buyer.loan_number %><br />
+  <b>Loan Amount:</b> <%= @buyer.loan_amount %><br />
+  <b>Type of Policy:</b> <%= @buyer.type_of_policy %><br />
+  <b>ICL/CPL Requested:</b> <%= @buyer.icl_requested %><br />
+  <b>ALTA Endorsements Requested:</b> <%= @buyer.alta_endorsement %><br />
+</p>
+
+<p>
+  <h3>Taxes</h3>
+  <b>Paid Through:</b> <%= @buyer.tax.paid_through %><br />
+  <b>Amount:</b> $<%= @buyer.tax.amount %><br />
+</p>
+
+<p>
+  <h3>Liens</h3>
+  <b>Lien Numbers:</b> <%= @buyer.lien.liens %><br />
+  <b>Lien Amount:</b> $<%= @buyer.lien.lien_amount %><br />
+</p>
+
+<p>
+  <h3>Easement and Right of Way Information</h3>
+  <b>Any Easements or Right of Ways:</b> <%= @buyer.easement.exists %><br />
+  <b>Effects on Property:</b> <%= @buyer.easement.effects %><br />
+  <b>Attached Easements/Right of Ways:</b> <%= link_to "PDF", @buyer.easement.recorded_easement.url, target:"_blank" %><br />
+</p>
+
+<p>
+  <h3>Prior Title Policies</h3>
+  <b>Is there a Prior Policy:</b> <%= @buyer.prior_policy.pp_exists %><br />
+  <b>Attached Prior:</b> <%= link_to "PDF", @buyer.prior_policy.pp_copy.url, target: "blank" %><br />
+</p>
+
+<p>
+  <h3>Mobile/Manufactured Homes</h3>
+  <b>Is This a Mobile/Manufactured Home:</b> <%= @buyer.manufactured_home.m_home_exists %><br />
+  <b>Is it Affixed:</b> <%= @buyer.manufactured_home.m_home_real_estate %><br />
+  <b>Housing Affidavit:</b> <%= link_to "PDF", @buyer.manufactured_home.m_home_affidavit.url, target: "blank" %><br />
+</p>
+
+<p>
+  <h3>Occupancies</h3>
+  <b>Current Occupants:</b> <%= @buyer.occupancy.occupants %>
+</p>
+
+<p>
+  <h3>Construction Information</h3>
+  <b>Is there Construction on the property:</b> <%= @buyer.construction.construct_complete %><br />
+  <b>Has A Construction Lien Agent Been Appointed:</b> <%= @buyer.construction.construct_lien_appointed %><br />
+  <b>Construction Lien Agent:</b> <%= @buyer.construction.construct_lien_name %><br />
+</p>
+
+<p>
+  <h3>Property Uses</h3>
+  <b>Property Use:</b> <%= @buyer.property_use.property_use_type %>
+</p>
+
+<p>
+  <h3>Mortgages</h3>
+  <b>Name on Deed of Trust:</b> <%= @buyer.mortgage.owner %><br />
+  <b>Date Recorded:</b> <%= @buyer.mortgage.dated %><br />
+  <b>Book:</b> <%= @buyer.mortgage.book %><br />
+  <b>Page:</b> <%= @buyer.mortgage.page %><br />
+  <b>Amount:</b> <%= @buyer.mortgage.amount %><br />
+</p>
+
+<p>
+  <h3>Database Information</h3>
+  <b>Account Number:</b> <%= @buyer.database.account_number %><br />
+  <b>Tax Year:</b> <%= @buyer.database.tax_year %><br />
+  <b>Real Estate ID:</b> <%= @buyer.database.real_estate_num %><br />
+  <b>Primary Owner:</b> <%= @buyer.database.primary_owner %><br />
+  <b>Street Address:</b> <%= @buyer.database.street_number %> <%= @buyer.database.street_name %><br />
+  <b>Deed Book:</b> <%= @buyer.database.deed_book %><br />
+  <b>Deed Page:</b> <%= @buyer.database.deed_page %><br />
+  <b>Building Value:</b> <%= @buyer.database.building_value %><br />
+  <b>Land Value:</b> <%= @buyer.database.land_value %><br />
+  <b>Total Property Value:</b> <%= @buyer.database.total_value %><br />
+  <b>Total Taxes Billed:</b> <%= @buyer.database.total_tax_billed %><br />
+  <b>Total Taxes Due:</b> <%= @buyer.database.total_tax_due %><br />
 </p>
