@@ -11,7 +11,7 @@ class DatabasesController < ApplicationController
     @database = Database.new(database_params)
     respond_to do |format|
       if @database.save
-          format.html {redirect_to buyer_path(@database.buyer_id), notice: "Client info has been updated"}
+          format.html {redirect_to buyer_database_path(@database.buyer_id, @database), notice: "Client info has been updated"}
         else
           format.html {render :new}
         end
