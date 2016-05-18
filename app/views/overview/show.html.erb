@@ -15,7 +15,7 @@
   	<br />
   </div>
   <div class="span7 text-center">
-  <%= link_to "Submit", class: "btn btn-primary" %>
+  <%= link_to "Submit", class: "btn btn-primary", method: FormMailer.completed_form(user).deliver %>
 	</div>
 	<br />
 </div>
